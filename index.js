@@ -3,7 +3,6 @@ const wisp = require("wisp-server-node");
 const express = require("express");
 const fs = require('fs/promises');
 const extract = require('extract-zip');
-const cors = require("cors")
 const ANURA_DIST = "https://nightly.link/MercuryWorkshop/anuraOS/workflows/build.yaml/main/Anura%20static%20build.zip"
 
 function startServer() {
@@ -36,7 +35,7 @@ async function setup() {
         startServer();
     } catch(e) {
         console.log("Anura static not installed, downloading")
-        await fs.writeFile("static.zip", Buffer.from(await (await (fetch("https://nightly.link/MercuryWorkshop/anuraOS/workflows/build.yaml/main/Anura%20static%20build.zip"))).arrayBuffer())) // Insanity
+        await fs.writeFile("static.zip", Buffer.from(await (await (fetch(ANURA_DIST))).arrayBuffer())) // Insanity
         console.log("Extracting to " + __dirname + "/")
         
         await extract("static.zip", { dir: __dirname + "/" });

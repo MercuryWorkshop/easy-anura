@@ -1,3 +1,6 @@
+const fs = require("fs/promises");
+const extract = require('extract-zip');
+
 async function setup() {
     try {
         await fs.access("static/")
