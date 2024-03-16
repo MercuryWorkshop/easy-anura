@@ -18,7 +18,7 @@ function startServer() {
     })
 
     app.use(express.static("static"))
-    httpServer = app.listen()
+    httpServer = app.listen((process.env.PORT || 8000))
     // no wsproxy support until I add it to wisp-server-node, why? Because, I dont feel like it
     httpServer.on('upgrade', (req, socket, head) => {
         wisp.routeRequest(req, socket, head);
