@@ -1,0 +1,17 @@
+{
+  "name": "easy-anura",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
+    "extract-zip": "^2.0.1",
+    "wisp-server-node": "^1.0.2"
+  }
+}
