@@ -1,5 +1,5 @@
 {
     "version": 2,
-    "buildCommand": "mkdir static && cd static && curl -Lo anura.zip https://github.com/MercuryWorkshop/anuraOS/releases/download/latest/anura.zip && unzip anura.zip && rm anura.zip && sed -i 's/\"defaultsettings\": {/\"defaultsettings\": {\n        \"wisp-url\": \"wss://anura.pro/\",/' config.json",
+    "buildCommand": "node build.js",
     "outputDirectory": "static"
 }
