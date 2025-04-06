@@ -11,11 +11,11 @@ async function setup() {
         await fs.mkdir("static");
         console.log("Extracting to " + __dirname + "/static")
         await extract("static.zip", { dir: __dirname + "/static" });
-        
+
         const config = JSON.parse(await fs.readFile(__dirname + "/static/config.json", "utf-8"));
         // config chanegs
         config.defaultsettings["wisp-url"] = "wss://anura.pro/"; // Wisp server in lieu of vercel supporting one
-        fs.writeFile(__dirname + "/static/config.json", JSON.stringify(config));
+        fs.writeFile(__dirname + "/static/config.json", JSON.stringify(config)); // save config
     }
 }
 setup();
