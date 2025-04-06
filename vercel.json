@@ -1,10 +1,5 @@
 {
     "version": 2,
     "buildCommand": "mkdir static && cd static && wget https://github.com/MercuryWorkshop/anuraOS/releases/download/latest/anura.zip && unzip anura.zip && rm anura.zip && sed -i 's/\"defaultsettings\": {/\"defaultsettings\": {\n        \"wisp-url\": \"wss://anura.pro/\",/' config.json",
-    "builds": [
-        {
-            "src": "static/",
-            "use": "@vercel/static"
-        }
-    ]
+    "outputDirectory": "static"
 }
