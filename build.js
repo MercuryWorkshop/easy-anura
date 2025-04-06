@@ -10,8 +10,7 @@ async function setup() {
         await fs.writeFile("static.zip", Buffer.from(await (await (fetch("https://github.com/MercuryWorkshop/anuraOS/releases/download/latest/anura.zip"))).arrayBuffer())); // Insanity
         
         await fs.mkdir("static");
-        console.log(fs.readFile(__dirname + "static/config.json", "utf-8"))
-        const config = JSON.parse(fs.readFile(__dirname + "static/config.json", "utf-8"));
+        const config = JSON.parse(await fs.readFile(__dirname + "static/config.json", "utf-8"));
         // config chanegs
         config.defaultsettings["wisp-url"] = "wss://anura.pro/"; // Wisp server in lieu of vercel supporting one
         fs.writeFile(__dirname + "static/config.json", JSON.stringify(config));
